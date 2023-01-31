@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"gene.go/files"
+	"gene.go/trees"
 )
 
 type Notice struct {
@@ -27,6 +28,12 @@ func main() {
 		data.Init()
 		data.Add(data.Notice(article))
 	*/
+	var article Notice
+	article.Spawn = "raiz"
+	article.Date = time.Date(2023, 1, 17, 0, 0, 0, 0, time.Local)
+	article.Quantity = 4
+	var tree *trees.Tree = trees.Add(trees.Notice(article))
+	fmt.Println(tree)
 	fmt.Println("| Body:", file)
 	fmt.Println("|-------------------------------------------------")
 	fmt.Println("| End...")
