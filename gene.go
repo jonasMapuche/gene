@@ -38,10 +38,9 @@ func main() {
 	var tree *trees.Tree = trees.Add(trees.Notice(article))
 	fmt.Println("| Tree: ", tree.String())
 	fmt.Println("|-------------------------------------------------")
-	fmt.Println("| Body...")
-	file := "care1.go"
-	files.Body("output/" + file)
-	fmt.Println("| Body:", file)
+	fmt.Println("| File...")
+	files.Body()
+	fmt.Println("| File:", files.File)
 	fmt.Println("|-------------------------------------------------")
 	fmt.Println("| Http...")
 	router.Controller()
